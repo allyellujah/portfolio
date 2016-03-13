@@ -1,14 +1,94 @@
-ul.menu {
-	margin: 0;
-	padding: 0;
-	li {
-		display: inline;
-		margin-right: 10px;
-		a {
-			color: #333;
-			padding: 10px;
-			background: #333;
-			color: white;
+nav {
+	display: none;
+	z-index: 4;
+	width: 40%;
+	transition: all .3s;
+	.filter {
+		position: fixed;
+		z-index: 3;
+		width: 20%;
+		top: 0;
+		bottom: 0;
+		right: 0;
+		background: $light-purple;
+		opacity: .95;
+		transition: all .3s;
+	}
+	ul {
+		padding: 0;
+		margin: 0;
+		position: fixed;
+		top: 2%;
+		bottom: 0;
+		right: 2%;
+		z-index: 4;
+		transition: all .3s;
+		li {
+			text-transform: uppercase;
+			flex-basis: 15%;
+			padding-top: calc(25% - 1.6rem);
+			a {
+				color: $purple;
+				&:hover {
+					border: 0;
+					color: darken($purple, 10%);
+				}
+			}
 		}
 	}
 }
+
+.hamburger {
+	position: fixed;
+	z-index: 5;
+	top: 3%;
+	right: 3%;
+	height: 30px;
+	width: 30px;
+	margin: 0;
+	transform: rotate(0deg);
+	transition: .5s ease-in-out;
+	cursor: pointer;
+}
+
+.hamburger span {
+	display: block;
+	position: absolute;
+	height: 4px;
+	width: 100%;
+	background: darken($light-purple, 10%);
+	border-radius: 9px;
+	left: 0;
+	transform: rotate(0deg);
+	transition: .25s ease-in-out;
+}
+
+.hamburger .one {
+  	top: 0px;
+}
+
+.hamburger .two {
+  	top: 10px;
+}
+
+.hamburger .three {
+  	top: 20px;
+}
+
+.hamburger.active span:nth-child(1) {
+  	top: 10px;
+  	transform: rotate(135deg);
+  	background: $purple;
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+  left: -60px;
+}
+
+.hamburger.active span:nth-child(3) {
+  top: 10px;
+  transform: rotate(-135deg);
+  background: $purple;
+}
+

@@ -46,6 +46,10 @@ function hackeryou_styles(){
 	wp_enqueue_style('style', get_stylesheet_uri() );
 
 	wp_enqueue_style('fontawesome', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css');
+	wp_enqueue_style('googlefonts', 'https://fonts.googleapis.com/css?family=Lato:100,300,500,900');
+	wp_enqueue_style('devicon', 'https://cdn.rawgit.com/konpa/devicon/master/devicon.min.css');
+	wp_enqueue_style('devicons', 'http://cdn.jsdelivr.net/devicons/1.8.0/css/devicons.min.css');
+	wp_enqueue_style('jqueryUI', 'http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css');
 }
 
 add_action( 'wp_enqueue_scripts', 'hackeryou_styles');
@@ -59,16 +63,23 @@ function hackeryou_scripts() {
 	wp_deregister_script('jquery');
   wp_enqueue_script(
   	'jquery',
-  	"http" . ($_SERVER['SERVER_PORT'] == 443 ? "s" : "") . "://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js",
+  	"http" . ($_SERVER['SERVER_PORT'] == 443 ? "s" : "") . "://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js",
   	false, //dependencies
   	null, //version number
   	true //load in footer
+  );
+  wp_enqueue_script(
+    'jqueryUI', //handle
+    'http' . ($_SERVER['SERVER_PORT'] == 443 ? 's' : '') . '://code.jquery.com/ui/1.11.4/jquery-ui.js', //source
+    array( 'jquery' ), //dependencies
+    null, // version number
+    true //load in footer
   );
 
   wp_enqueue_script(
     'plugins', //handle
     get_template_directory_uri() . '/js/plugins.js', //source
-    false, //dependencies
+    array( 'jquery' ), //dependencies
     null, // version number
     true //load in footer
   );
@@ -76,10 +87,18 @@ function hackeryou_scripts() {
   wp_enqueue_script(
     'scripts', //handle
     get_template_directory_uri() . '/js/main.min.js', //source
+    array( 'jquery', 'jqueryUI', 'plugins', 'wow' ), //dependencies
+    null, // version number
+    true //load in footer
+  );
+  wp_enqueue_script(
+    'wow', //handle
+    get_template_directory_uri() . '/js/wow.min.js', //source
     array( 'jquery', 'plugins' ), //dependencies
     null, // version number
     true //load in footer
   );
+
 }
 
 add_action( 'wp_enqueue_scripts', 'hackeryou_scripts');

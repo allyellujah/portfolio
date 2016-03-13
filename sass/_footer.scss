@@ -1,3 +1,52 @@
 footer {
 	clear: both;
+	background: $black;
+	color: $white;
+	margin: 0;
+	width: 100%;
+	position: relative;
+	.wrapper {
+		display: flex;
+	}
+	ul {
+		list-style: none;
+		margin: 0;
+		padding: 5%;
+		flex-basis: 70%;
+		li {
+			float: left;
+			width: 20%;
+			a {
+				color: lighten($black, 10%);
+				font-size: 3rem;
+				transition: color .2s;
+				&:hover {
+					border: 0;
+					color: lighten($black, 20%);
+				}
+			}
+		}
+	}
+	.credit {
+		position: absolute;
+		top: 30%;
+		right: 5%;
+		margin: 0;
+		text-align: center;
+		cursor: pointer;
+		p {
+			margin: 0;
+			font-size: 1.4rem;
+			text-transform: uppercase;
+		}
+		.clip {
+			text-transform: uppercase;
+		}
+	}
+	a {
+		color: $white;
+		&:hover {
+			border-bottom: 1px solid $white;
+		}
+	}
 }

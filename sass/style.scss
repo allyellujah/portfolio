@@ -1,46 +1,68 @@
 /*
-* Theme Name: HackerYou Starter Theme
-* Theme URI: http://hackeryou.com;
-* Description: Starter theme for building any website. Created by HackerYou. * Rename this to your own theme page.
+* Theme Name: Creato PSD Theme
+* Theme URI: http://themeforest.net/item/creato-creative-modern-psd-template/10707021?s_rank=876;
+* Description: Creato Theme, coded for Wordpress by Allye Vice
 * Version: 1.0
-* Author: HackerYou
-* Author URI: http://hackeryou.com
+* Author: Allye Vice
+* Author URI: http://allyevice.com
 */
 
-@import 'normalize';
-@import 'typography';
-@import 'navigation';
-@import 'sidebar';
-@import 'comments';
-@import 'footer';
-/*
-====================================
-Default Styling
-====================================
-*/
+$font: 'Lato', sans-serif;
+$white: #ECEFF0;
+$black: #2B2B2B;
+$purple: #6F6070;
+$light-purple: #afa7b4;
 
-img {
-	max-width: 100%;
+html {
+	font-size: 10px;
+	font-size: 62.5%;
 }
 
 body {
-	color: #333;
+	font-family: $font;
+	background: $white;
 }
 
-.container {
+.wrapper {
 	max-width: 1200px;
 	margin: 0 auto;
-}
-
-.content {
-	float: left;
-	width: 65%;
-	margin-right: 5%;
 }
 
 .full {
 	width: 100%;
 }
+
+.notFound {
+	text-align: center;
+	margin: 10% 0;
+	h1 {
+		text-transform: uppercase;
+	}
+	input {
+		border: 0;
+		background: none;
+		outline: 0;
+		margin-top: 3%;
+	}
+	input[type=submit] {
+		background-color: $purple;
+		color: $white;
+		padding: 10px;
+	}
+}
+
+@import 'normalize';
+@import 'animate';
+@import 'typography';
+@import 'navigation'; 
+@import 'header';
+@import 'about';
+@import 'portfolio';
+@import 'skills';
+@import 'contact';
+@import 'footer';
+@import 'responsive';
+
 
 
 

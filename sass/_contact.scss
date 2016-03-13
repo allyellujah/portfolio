@@ -1,0 +1,67 @@
+.contact {
+	position: relative;
+	padding-top: 5%;
+	background: $black url('images/map_toronto.jpg') no-repeat top right;
+	.half {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 40%;
+		background: $white;
+	}
+	.shape {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 50%;
+		right: 30%;
+		background: $white;
+		-webkit-transform: skew(-15deg);
+		-moz-transform: skew(-15deg);
+		-o-transform: skew(-15deg);
+	}
+	.heading {
+		padding-left: 10%;
+	}
+	h6 {
+		text-transform: lowercase;
+		position: relative;
+		top: 7px;
+		right: 3px;
+	}
+	.clip::after {
+		content:'';
+		display: block;
+		border-bottom: 4px solid $purple;
+		position: absolute;
+		height: 2px;
+		width: 30px;
+	}
+	.formContainer {
+		width: 50%;
+		padding: 5% 0 5% 10%;
+		position: relative;
+		z-index: 1;
+		p {
+			margin: 0;
+		}
+	}
+	input, textarea {
+		width: 100%;
+		border: 0;
+		background: none;
+		outline: 0;
+		border-bottom: 2px dotted $purple;
+		margin-top: 3%;
+	}
+	textarea {
+		resize: none;
+		height: 100px;
+	}
+	input[type=submit] {
+		background-color: $purple;
+		color: $white;
+		padding: 10px 0;
+	}
+}
